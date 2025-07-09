@@ -6,6 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 
     /* 
         - BrowserRouter component helps our app to stay aware of changes in the URL.
-        - Link component which allows the users to navigate around the application
+        - Link component which allows the users to navigate around the application.
+        - Route - for every piece of UI, we're going to assign a route, if that route's
+          path matches the URL that we're currently on, it'll render that piece of UI, that screen.
     */
 ReactDOM.render(<BrowserRouter><Main/></BrowserRouter>,document.getElementById('root'));
