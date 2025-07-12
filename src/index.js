@@ -1,11 +1,18 @@
 import React, {Component} from "react";
 import ReactDOM from 'react-dom';
-import Main from './Components/Main'
 import './styles/stylesheet.css';
 import { BrowserRouter } from "react-router-dom";
 import { createStore } from "redux";
-import rootReducer from './redux/reducer'
+import rootReducer from './redux/reducer';
+import { Provider } from "react-redux";
+import App from "./Components/App";
 
+/* 
+  Redux flow - 
+  We have created a store inside Index.js, and used a reducer to populate that store with state in reducer.js,
+  We pass that state down as props to our main component and in turen we passed these posts down to Photo component
+  as props and used them to generate our photos.
+*/
 const store = createStore(rootReducer)
 
     /* 
@@ -14,4 +21,4 @@ const store = createStore(rootReducer)
         - Route - for every piece of UI, we're going to assign a route, if that route's
           path matches the URL that we're currently on, it'll render that piece of UI, that screen.
     */
-ReactDOM.render(<BrowserRouter><Main/></BrowserRouter>,document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><BrowserRouter><App/></BrowserRouter></Provider>,document.getElementById('root'));

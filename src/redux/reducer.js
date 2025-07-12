@@ -1,4 +1,3 @@
-
 import posts from "../data/posts";
 
 /*
@@ -11,7 +10,7 @@ import posts from "../data/posts";
     to trigger a certain event, the action is dispatched and the purpose of that action is to somehow
     change the state via reducer.
 */
-const postReducer = function posts(state = posts, action){
+const postReducer = function post(state = posts, action){
 
     return state;
 }

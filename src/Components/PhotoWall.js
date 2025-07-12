@@ -27,8 +27,7 @@ function Photowall(props) {
 
 Photowall.prototypes = {
 
-    posts: PropTypes.array.isRequired,
-    onRemovePhoto: PropTypes.func.isRequired
+    posts: PropTypes.array.isRequired
 
 }
 
