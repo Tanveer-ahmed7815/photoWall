@@ -11,7 +11,8 @@ import posts from "../data/posts";
     change the state via reducer.
 */
 const postReducer = function post(state = posts, action){
-
+    console.log(action.index)
+    this.setStat
     return state;
 }
 

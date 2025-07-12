@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Title from "./Title";
 import { Route } from "react-router-dom";
 import Photowall from "./PhotoWall";
+import { removePost } from "../redux/actions";
 
 class Main extends Component {
 
@@ -12,7 +13,6 @@ class Main extends Component {
     }
 
     render() {
-
         return (
 
             <div>
@@ -20,7 +20,7 @@ class Main extends Component {
                     () => (
                         <div>
                             <Title title={'Photowall'} />
-                            <Photowall posts={this.props.posts}/>
+                            <Photowall {...this.props} />
                         </div>
                     )
                 } />

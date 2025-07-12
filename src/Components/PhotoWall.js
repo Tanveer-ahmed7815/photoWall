@@ -20,7 +20,7 @@ function Photowall(props) {
                 /* To sort the images based on id in desc order */
                 return y.id - x.id;
             })
-            .map((post) => <Photo key={post.id} post={post} onRemovePhoto={props.onRemovePhoto} />)}
+            .map((post,index) => <Photo key={index} post={post} {...props} index ={index} />)}
         </div>
     </div>
 }
