@@ -2,6 +2,8 @@ import { connect } from "react-redux";
 import Main from "./Main";
 import { bindActionCreators } from "redux";
 import { removePost } from "../redux/actions";
+import { withRouter } from "react-router";
+import { addPost } from "../redux/actions";
 
 /* 
   -This is where we will connect our store to Main component.
@@ -20,7 +22,7 @@ function mapStateToProps(state){
 
 /* This fuctions save us form having to write dispatch action creator in Main component */
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({removePost},dispatch)
+  return bindActionCreators({removePost,addPost},dispatch)
 }
 
 /* 
@@ -41,7 +43,16 @@ function mapDispatchToProps(dispatch){
      Main component, except now the Main component will be connected to our store.
 
 */
-const App = connect(mapStateToProps,mapDispatchToProps)(Main)
+
+/* 
+   - When connecting a component to a Redux store via connect, the component
+     stops updating the location change.
+   - A fix was made for this by going over to wherever we're connecting
+     our Main component to the store,
+     importing with-router from React router and wrap everything with the
+     withRouter
+*/
+const App = withRouter(connect(mapStateToProps,mapDispatchToProps)(Main))
 
 export default App
 

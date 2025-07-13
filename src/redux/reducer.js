@@ -12,8 +12,19 @@ import posts from "../data/posts";
 */
 const postReducer = function post(state = posts, action){
     console.log(action.index)
-    this.setStat
-    return state;
+    /* 
+      When the reducer gets invoked and the action has a type of REMOVE_POST,
+      So the remove post action, when that gets triggered, when that gets dispacthed,
+      we want to return a state, not modify a state, but return a state that doesn't 
+      include the post at that specified index that we pass in as payload,
+      thus updating the state, not writing to it.
+    */
+    switch(action.type){
+      case 'REMOVE_POST': return [...state.slice(0,action.index), ...state.slice(action.index + 1)];
+      case 'ADD_POST':return [...state, action.post]
+      default: return state;
+
+    }
 }
 
 export default postReducer;

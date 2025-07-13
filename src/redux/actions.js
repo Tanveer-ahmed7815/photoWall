@@ -22,3 +22,12 @@ export function removePost(index){
         index: index
     }
 }
+
+export function addPost(post){
+    return {
+        type: 'ADD_POST',
+        //as per ES6, if the argument name and the variable name is same
+        //we can map it like below, just post
+        post
+    }
+}
