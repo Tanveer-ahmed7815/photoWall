@@ -13,7 +13,7 @@ import App from "./Components/App";
   We pass that state down as props to our main component and in turen we passed these posts down to Photo component
   as props and used them to generate our photos.
 */
-const store = createStore(rootReducer)
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
     /* 
         - BrowserRouter component helps our app to stay aware of changes in the URL.
