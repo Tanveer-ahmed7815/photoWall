@@ -20,6 +20,19 @@ h1 {
     color: black;
   }
 
+h1 a{
+    color: black;
+    text-decoration: none;
+}
+
+h1 a:focus{
+    outline: 0;
+}
+
+body{
+    background: offwhite;
+}
+
 .photo-grid{
 
     max-width: 1000px;
@@ -36,27 +49,113 @@ h1 {
     margin: 0 2rem 2rem 2rem;
 }
 
+.figure .single-photo{
+    flex-basis: calc(33.333% - 4rem);
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 0 2rem 2rem 2rem;
+    padding: 2rem;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+    position: relative;
+}
+
+.single-photo{
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    background: #fff;
+    border: black;
+}
+
+.single-photo .figure{
+    box-shadow: none;
+    margin: 0 2rem 0 0;
+    border: 0;
+    padding: 0;
+    flex: 1 0 60%;
+    max-width: 60%;
+}
+
+.single-photo .comments{
+    flex: 1 0 40%;
+    max-width: 40%;
+}
+
+.single-photo .photo{
+    width: 100%;
+    margin: 0;
+}
+
 .photo {
     width: calc(100% + 4rem);
-    margin: -2rem 0rem 0rem -2rem;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    max-width: none;
+}
+
+.comment{
+    width: 100%;
+}
+
+.comment p{
+    border-bottom: 1px solid #d3d3d3;
+    padding: 0.5rem 0;
+}
+
+.comment-form input,
+.comment-form textarea{
+    width: 100%;
+    border: 0;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #d3d3d3;
+    outline: none;
+    resize: vertical;
 }
 
 .button-container{
+margin: 0 auto;   
 display: flex;
+align-items: center;
 justify-content: center;
 }
 
-button{
-flex-basis: 48%;
-color: red;
-font-size: 15px;
-border: 2px solid #f2f2f2;
-line-height: 2;
-padding: 5px;
+button, .button {
+    border: 2px solid #f2f2f2;
+    background: none;
+    flex-basis: 48%;
+    display: inline-block;
+    line-height: 2;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: red;
+    transition: all 0.2s;
+    box-sizing: padding-box;
 }
-button:hover,.button:hover, button:focus, .button:focus {
-    border-color: #00f;
+
+button:hover, .button:hover,
+button:focus, .button:focus {
+    border-color: #999;
     outline: 0;
+}
+
+.speech-bubble {
+    background: url('https://d3h8bchusj8g8f.cloudfront.net/png/15004_200.png') center no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+}
+
+.comment-count {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
 }
 
 .addIcon {
@@ -69,45 +168,51 @@ button:hover,.button:hover, button:focus, .button:focus {
 }
 
 .form {
-    background: white;
+    width: 300px;
     margin: 0 auto;
-    max-width: 360px;
-    padding: 45px;
-    text-align: center;
+    padding: 0 0;
 }
 
 .form input {
     font-family: sans-serif;
-    background: #f2f2f2;
+    outline: 0;
+    background: #f0f0f0;
     width: 100%;
-    border: none;
+    border: 0;
+    margin: 0 0 15px;
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
-    margin: 0 0 15px;
 }
 
-.form button{
-    font-family: sans-serif;
+.form button {
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    background: #065784;
+    outline: 0;
+    background: #657864;
     width: 100%;
-    border: none;
+    border: 0;
     padding: 15px;
-    color: white;
+    color: #FFFFFF;
     font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
     cursor: pointer;
 }
 
-.form button:hover{
-    background-color: #7b8589;
+.form button:hover,
+form button:active,
+form button:focus {
+    background: #7f8b74;
 }
 
-button:hover{
-    border-color: blue;
+.loader {
+    height: 10%;
+    width: 10%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    font-size: 24pt;
 }
 
-h1 a{
-    color: black;
-    text-decoration: none;
-}
