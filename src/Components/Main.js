@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Photowall from "./PhotoWall";
 import AddPhoto from "./AddPhoto";
-import { removePost } from "../redux/actions";
+import Single from "./Single";
 
 class Main extends Component {
 
@@ -16,27 +16,31 @@ class Main extends Component {
     render() {
         console.log(this.props)
         return (
-            
+
             <div>
-                 <h1>
+                <h1>
                     <Link to='/'>PhotoWall</Link>
                 </h1>
                 <Route exact path="/" render={
                     () => (
                         <div>
-               
+
                             {/* posts= props.post, remove = props.removePost */}
-                            <Photowall {...this.props} /> 
+                            <Photowall {...this.props} />
                         </div>
                     )
                 } />
-                <Route path="/AddPhoto" render = {
-                    ({history}) => (
-                   
-                            <AddPhoto {...this.props} onHistory={history}/>
-                  
+                <Route path="/AddPhoto" render={
+                    ({ history }) => (
+
+                        <AddPhoto {...this.props} onHistory={history} />
+
                     )
-                }/>
+                } />
+                {/* passing id as params from the URL */}
+                <Route path="/single/:id" render={(params) => (
+                    <Single {...this.props} {...params}/>
+                )} />
 
             </div>
         )
