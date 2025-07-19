@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import Main from "./Main";
 import { bindActionCreators } from "redux";
-import { removePost } from "../redux/actions";
 import { withRouter } from "react-router";
-import { addPost } from "../redux/actions";
+import * as actions from '../redux/actions'
+
 
 /* 
   -This is where we will connect our store to Main component.
@@ -16,13 +16,14 @@ import { addPost } from "../redux/actions";
 
 function mapStateToProps(state){
     return {
-        posts : state
+        posts : state.post,
+        comments: state.comments
     }
 }
 
 /* This fuctions save us form having to write dispatch action creator in Main component */
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({removePost,addPost},dispatch)
+  return bindActionCreators(actions,dispatch)
 }
 
 /* 

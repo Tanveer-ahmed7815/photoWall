@@ -2,6 +2,8 @@
  -All the actions of our app will be declared in this file.
 */
 
+import { type } from "@testing-library/user-event/dist/type"
+
 /* 
   -Action creator for remove.
   -Actions are just Javascript objects, however these objects are not portable and so 
@@ -29,5 +31,12 @@ export function addPost(post){
         //as per ES6, if the argument name and the variable name is same
         //we can map it like below, just post
         post
+    }
+}
+
+export function addComment(comment){
+    return {
+        type: 'ADD_COMMENT',
+        comment
     }
 }
