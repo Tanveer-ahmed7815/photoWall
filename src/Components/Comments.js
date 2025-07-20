@@ -11,7 +11,7 @@ class Comments extends Component{
         // This is to prevent the default behaviour of refreshing the page upon form submission
         event.preventDefault();
         const comment = event.target.elements.comment.value;
-        this.props.addComment(comment, this.props.id);
+        this.props.startAddingComment(comment, this.props.id);
         event.target.elements.comment.value =''
 
     }
