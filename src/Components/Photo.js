@@ -11,7 +11,13 @@ function Photo(props) {
         <div className="button-container">
             <button onClick={() => {
                 props.removePost(props.index)
+                props.history.push("/")
             }}>Remove</button>
+            <Link className="button" to={`/single/${post.id}`}>
+            <div className="comment-count">
+                {props.comments[post.id] ? props.comments[post.id].length : 0}
+            </div>
+            </Link>
         </div>
     </figure>
 }
