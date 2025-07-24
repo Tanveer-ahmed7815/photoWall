@@ -21,7 +21,7 @@ function mapStateToProps(state){
     }
 }
 
-/* This fuctions save us form having to write dispatch action creator in Main component */
+/* This fuctions save us from having to write dispatch action creator in Main component */
 function mapDispatchToProps(dispatch){
   return bindActionCreators(actions,dispatch)
 }
